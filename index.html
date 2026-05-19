@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РобоИсповедник 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="title flicker" id="app-title">РобоИсповедник 3000</h1>
+            <p class="subtitle" id="app-subtitle">Цифровое отпущение грехов</p>
+        </header>
+
+        <!-- Screen 1: Name -->
+        <div id="screen-name" class="screen">
+            <div class="lang-selector">
+                <button class="lang-btn" id="lang-ru">🇷🇺 РУС</button>
+                <button class="lang-btn" id="lang-en">🇬🇧 ENG</button>
+            </div>
+            <p class="prompt" id="prompt-name"></p>
+            <input type="text" id="input-name" class="text-input" autocomplete="off" />
+            <button id="btn-name-next" class="btn btn-primary"></button>
+        </div>
+
+        <!-- Screen 2: Sex -->
+        <div id="screen-sex" class="screen">
+            <p class="prompt" id="prompt-sex"></p>
+            <div class="choice-grid">
+                <button id="btn-male" class="choice-btn"></button>
+                <button id="btn-female" class="choice-btn"></button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Priest selection -->
+        <div id="screen-priest" class="screen">
+            <p class="prompt" id="prompt-priest"></p>
+            <div class="priest-list" id="priest-list"></div>
+        </div>
+
+        <!-- Screen 4: Religion -->
+        <div id="screen-religion" class="screen">
+            <p class="prompt" id="prompt-religion"></p>
+            <div class="religion-grid" id="religion-grid"></div>
+        </div>
+
+        <!-- Screen 4: Excuse (non-Christian) -->
+        <div id="screen-excuse" class="screen">
+            <div class="robot-message" id="excuse-text"></div>
+            <button id="btn-excuse-back" class="btn btn-secondary"></button>
+        </div>
+
+        <!-- Screen 5: Confession input -->
+        <div id="screen-confession" class="screen">
+            <p class="prompt" id="prompt-confession"></p>
+            <textarea id="input-confession" class="text-area"></textarea>
+            <button id="btn-confess" class="btn btn-primary"></button>
+        </div>
+
+        <!-- Screen 6: Robot response -->
+        <div id="screen-response" class="screen">
+            <div class="robot-response">
+                <div class="robot-icon">✝</div>
+                <div class="robot-text" id="response-text"></div>
+            </div>
+            <button id="btn-again" class="btn btn-secondary"></button>
+            <div class="invite-section" id="invite-section">
+                <p class="invite-prompt" id="invite-prompt"></p>
+                <div class="invite-form">
+                    <input type="text" id="input-emails" class="text-input" />
+                    <button id="btn-invite" class="btn btn-secondary"></button>
+                </div>
+                <p class="invite-confirm hidden" id="invite-confirm"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading" class="loading hidden">
+        <div class="loading-cross">✝</div>
+        <div class="loading-text" id="loading-text"></div>
+        <div class="loading-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <form name="balance-alert" netlify hidden>
+        <input name="balance" />
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>

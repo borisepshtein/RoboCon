@@ -1,0 +1,13 @@
+#,Name,Description,Status
+1,Core confession flow,"Multi-screen wizard: name → sex → religion → confession → robot response via Claude API",Done
+2,Non-Christian excuses,"Funny deflection messages for Judaism, Islam, Buddhism, Hinduism",Done
+3,Airtable session logging,"Log name, sex, religion, priest, confession, absolution, timestamp, IP to Airtable after each confession",Done
+4,Three priest personalities,"Friar Tuck (jolly), John Paul II (neutral), Savonarola (strict) — each with a distinct system prompt",Done
+5,Priest selection screen,"Card-style UI showing each priest's name, symbol, and humorous tagline",Done
+6,Prompt injection guard,Each system prompt instructs Claude to ignore role-override attempts hidden in the confession text,Done
+7,Language selector,"Toggle between Russian and English on the first screen; full UI and system prompts translated for both",Done
+8,API balance tracker,"Estimates running API cost from token usage; sends email alert via Netlify Forms when balance drops below $2.00",Done
+9,Referral tracking,"Reads 'source' URL parameter on load and logs it to the Airtable Source field for every confession in that session",Done
+10,Abandoned session tracking,"On browser close, sendBeacon logs partial session to Airtable with N/A for unset fields and the FinalScreen where the user dropped off",Done
+11,Friend invitation box,"After the absolution screen, a witty invite box fades in after 2s; entered emails are logged comma-separated to the Airtable Emails field",Done
+12,Invitation email sending,"Send a branded HTML invitation email via Resend to friends entered on the response screen; requires a verified sending domain",Planned
