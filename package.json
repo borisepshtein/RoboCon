@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "better-sqlite3": "^9.4.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.14"
   }
 }

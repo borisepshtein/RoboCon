@@ -209,13 +209,11 @@ function setupInviteSection(recordId) {
 
         btnInvite.disabled = true;
 
-        if (recordId) {
-            await fetch('api/log-emails', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ recordId, emails }),
-            }).catch(err => console.error('log-emails error:', err));
-        }
+        await fetch('api/send-invites', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ recordId, emails, lang: state.lang, senderName: state.name }),
+        }).catch(err => console.error('send-invites error:', err));
 
         inputEmails.style.display = 'none';
         btnInvite.style.display = 'none';
