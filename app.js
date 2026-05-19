@@ -68,7 +68,7 @@ function showScreen(id) {
 window.addEventListener('beforeunload', () => {
     if (currentScreen === 'screen-response') return;
     navigator.sendBeacon(
-        '/.netlify/functions/abandon',
+        '/api/abandon',
         new Blob([JSON.stringify({
             name:        state.name    || 'N/A',
             sex:         state.sex     || 'N/A',
@@ -210,7 +210,7 @@ function setupInviteSection(recordId) {
         btnInvite.disabled = true;
 
         if (recordId) {
-            await fetch('/.netlify/functions/log-emails', {
+            await fetch('/api/log-emails', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ recordId, emails }),
@@ -232,7 +232,7 @@ async function submitConfession() {
     loading.classList.remove('hidden');
 
     try {
-        const res = await fetch('/.netlify/functions/confess', {
+        const res = await fetch('/api/confess', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
